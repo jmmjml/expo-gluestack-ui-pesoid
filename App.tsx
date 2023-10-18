@@ -5,8 +5,8 @@ import Main from './src/screens/Main';
 export default function App() {
   return (
     <GluestackUIProvider config={config}>
-      <Box width="100%" justifyContent="center" alignItems="center" height={"$full"}>
-        <Main />
+      <Box width="100%" height={'$full'} justifyContent="center" alignItems="center">
+        <Main/>
       </Box>
     </GluestackUIProvider>
   );
