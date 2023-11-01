@@ -1,5 +1,8 @@
-import { Box, Button, ButtonText, Center, FormControl, FormControlLabel, FormControlLabelText, HStack, Heading, Input, InputField, Switch, Text } from "@gluestack-ui/themed";
+import { Box, Button, ButtonText, Center, FormControl, FormControlLabel, FormControlLabelText, HStack, Heading, Image, Input, InputField, Switch, Text } from "@gluestack-ui/themed";
 import { useState } from "react";
+
+import homem from "../../../assets/homem.png";
+import mulher from "../../../assets/mulher.png";
 
 export default function Main(){
     const [peso,setPeso] = useState("72")
@@ -31,7 +34,7 @@ export default function Main(){
         setAltura("1.70")
     }
     return (
-        <Box bg="$primary100" p="$5"  h={"$1/2"} w={300} borderRadius="$3xl">
+        <Box bg="$primary100" p="$5"  h={"$3/4"} w={300} borderRadius="$3xl">
             <Center h={"$full"}>
                 <Heading>Peso Ideal</Heading>
                 <FormControl>
@@ -63,11 +66,12 @@ export default function Main(){
                             <ButtonText>Limpar</ButtonText>
                         </Button>
                     </Box>
-                    <Box justifyContent="space-between" alignItems="center" height={50}>
+                    <Box justifyContent="space-around" alignItems="center" height={100} flexDirection="row" display="flex">
                         <Text>Resultado:</Text>
                         <Text fontWeight="$bold">{resultado}</Text>
                     </Box>
                 </FormControl>
+                <Image source={sexo ? mulher : homem} height={'35%'} alt="imagem do tipo do sexo"/>
             </Center>
         </Box>
     )
